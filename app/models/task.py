@@ -12,7 +12,7 @@ class Task(Base):
     content = Column(String)
     priority = Column(Integer, default=0)
     completed = Column(Boolean, default=False)
-    user_id = Column(String, ForeignKey("users.id"), index=True, nullable=False)
+    user_id = Column(String, ForeignKey("user.id"), index=True, nullable=False)
     slug = Column(String, unique=True, index=True)
     user = relationship("User", back_populates="tasks")
 
